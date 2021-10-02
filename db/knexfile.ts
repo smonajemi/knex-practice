@@ -1,6 +1,6 @@
 // Update with your config settings.
 import { Knex } from 'knex'
-export const config: Knex.Config = {
+const config = {
 
     client: "pg",
     connection: {
@@ -18,3 +18,4 @@ export const config: Knex.Config = {
     }
 };
 
+export default config;

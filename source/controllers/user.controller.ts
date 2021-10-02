@@ -1,45 +1,39 @@
-import { Request, Response, NextFunction } from 'express';
-import axios, { AxiosResponse } from 'axios';
+import {Context} from 'koa'
 
-interface User {
-    id: Number;
-    userId: Number;
-    firstName: String;
-    lastName: String;
-}
 
 // getting home page
-const home = async (req: Request, res: Response, next: NextFunction) => {
+export const home = async (ctx: Context) => {
     /** Routes */
     const error = new Error('Backend is working');
-    return res.status(200).json({
-        message: error.message
-    });
+    // return ctx.json({
+    //     message: error.message
+    // });
+};
+
+
+// adding a user
+export const createUser = async (ctx: Context) => {
+    ctx.send('addUser is working')
 };
 
 // getting all users
-const getUsers = async (req: Request, res: Response, next: NextFunction) => {
-    res.send('getUsers is working')
+export const getUsers = async (ctx: Context) => {
+    ctx.send('getUsers is working')
 };
 
 // getting a single user
-const getUser = async (req: Request, res: Response, next: NextFunction) => {
-    res.send('getUser is working')
+export const getUser = async (ctx: Context) => {
+    ctx.send('getUser is working')
 };
 
 // updating a user
-const updateUser = async (req: Request, res: Response, next: NextFunction) => {
-    res.send('updateUser is working')
+export const updateUser = async (ctx: Context) => {
+    ctx.send('updateUser is working')
 };
 
 // deleting a user
-const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
-    res.send('deleteUser is working')
+export const deleteUser = async (ctx: Context) => {
+    ctx.send('deleteUser is working')
 };
 
-// adding a user
-const addUser = async (req: Request, res: Response, next: NextFunction) => {
-    res.send('addUser is working')
-};
-
-export default {home, getUsers, getUser, updateUser, deleteUser, addUser };
+export default {home, createUser, getUsers, getUser, updateUser, deleteUser};

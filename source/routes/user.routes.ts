@@ -8,7 +8,7 @@ router.get('/users', controller.getUsers);
 router.get('/users/:id', controller.getUser);
 
 // user
-router.post('/users', controller.addUser);
+router.post('/users', controller.createUser);
 
 // Put
 router.put('/users/:id', controller.updateUser);
