@@ -2,13 +2,13 @@ import { Request, Response, NextFunction } from 'express';
 import axios, { AxiosResponse } from 'axios';
 
 interface User {
-    userId: Number;
     id: Number;
-    title: String;
-    body: String;
+    userId: Number;
+    firstName: String;
+    lastName: String;
 }
 
-// getting all Users
+// getting home page
 const home = async (req: Request, res: Response, next: NextFunction) => {
     /** Routes */
     const error = new Error('Backend is working');
@@ -17,28 +17,28 @@ const home = async (req: Request, res: Response, next: NextFunction) => {
     });
 };
 
-// getting all Users
+// getting all users
 const getUsers = async (req: Request, res: Response, next: NextFunction) => {
     res.send('getUsers is working')
 };
 
-// getting a single User
+// getting a single user
 const getUser = async (req: Request, res: Response, next: NextFunction) => {
     res.send('getUser is working')
 };
 
-// updating a User
+// updating a user
 const updateUser = async (req: Request, res: Response, next: NextFunction) => {
     res.send('updateUser is working')
 };
 
 
-// deleting a User
+// deleting a user
 const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
     res.send('deleteUser is working')
 };
 
-// adding a User
+// adding a user
 const addUser = async (req: Request, res: Response, next: NextFunction) => {
     res.send('addUser is working')
 };
