@@ -1,6 +1,6 @@
 import { knex } from 'knex'
-import { knexfile } from '../source/knexfile';
+import config from './knexfile';
 
 
-const db = knex(knexfile.development);
-module.exports = db;
+export const db = knex(config);
+

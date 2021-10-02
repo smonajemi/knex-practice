@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "source/server.ts",
   "scripts": {
-    "migrate:latest": "npx knex migrate:latest --knexfile source/knexfile.ts",
-    "migrate:rollback": "npx knex migrate:rollback --knexfile source/knexfile.ts",
+    "migrate:make": "npx knex migrate:make init --migrations-directory db/migrations -x ts",
+    "migrate:latest": "npx knex migrate:latest --knexfile db/knexfile.ts",
+    "migrate:rollback": "npx knex migrate:rollback --knexfile db/knexfile.ts",
     "start": "nodemon source/server.ts",
     "dev": "nodemon source/server.ts",
     "build": "rm -rf build/ && prettier --write source/ && tsc"
@@ -16,6 +17,7 @@
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
     "axios": "^0.22.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "knex": "^0.95.11",
     "morgan": "^1.10.0",
