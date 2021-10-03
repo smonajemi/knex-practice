@@ -1,6 +1,6 @@
-import {Entity, Object} from './default/default.types'
+import {Entity, BusinessObject} from './default/default.types'
 
-export interface User extends Object {
+export interface User extends BusinessObject {
     id?: string;
     username: string;
     firstName: string;

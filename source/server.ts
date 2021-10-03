@@ -7,12 +7,14 @@ const router: Express = express();
 
 /** Logging */
 router.use(morgan('dev'));
-router.use(express.urlencoded({ extended: false }));
+router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
+
 
 
 /** RULES OF OUR API */
 router.use((req, res, next) => {
+    res.setHeader('Content-Type', 'application/json');
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'origin, X-Requested-With,Content-Type,Accept, Authorization');
     if (req.method === 'OPTIONS') {
