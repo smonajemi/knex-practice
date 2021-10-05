@@ -14,6 +14,6 @@ npm run migrate:make table_name
 npm run migrate:latest
 
 # Undo migration:
-npm run migrate: rollback --> if entered once, goes back once, if twice, cleares out the table
+npm run migrate:rollback --> if entered once, goes back once, if twice, cleares out the table
 
 
