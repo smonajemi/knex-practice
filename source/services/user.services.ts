@@ -44,7 +44,7 @@ export const updateUser = async (userId: string, user: User): Promise<User> => {
     return response
 }
 
-export const deleteUser = async (userId: string, user: User): Promise<User | any> => {
+export const deleteUser = async (userId: string, user: User): Promise<User> => {
     const userEntity = mapUserEntityFromUser(user)
     userEntity.is_deleted = true
     userEntity.username = ''
