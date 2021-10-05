@@ -10,11 +10,11 @@ Note: Every design that you perform will generate automatically as text data in 
 Please import postman collection and env from postman folder - if you add new requests, please update the postman for the rest of the team
 
 
-# Step 1
+# Step 1:
 git pull
-# Step 2
+# Step 2:
 npm start
-# Step 3
+# Step 3:
 npm run migrate:latest
 
 
