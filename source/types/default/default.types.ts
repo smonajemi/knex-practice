@@ -1,9 +1,9 @@
 import Raw from 'knex'
 
 export interface Entity {
-    created_at?: string | any;
-    updated_at?: string | any;
-    deleted_at?: string | any;
+    created_at?: string;
+    updated_at?: string;
+    deleted_at?: string;
 }
 
 export interface BusinessObject {
