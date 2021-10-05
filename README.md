@@ -25,3 +25,6 @@ npm run migrate:rollback --> if entered once, goes back one migration, and if tw
 
 # Flow:
 Migration -> Types -> Mappers -> Repository -> Services -> Controllers -> Routes
+
+# Postman:
+Please import postman collection and env from postman folder - if you add new requests, please update the postman as well for better collaboration
