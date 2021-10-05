@@ -31,4 +31,4 @@ npm run migrate:latest
 npm run migrate:rollback --> if entered once, goes back one migration, and if twice, it cleares out the table
 
 # Flow:
-Migration -> Types -> Mappers -> Repository -> Services -> Controllers -> Routes
+Migration -> Types -> Mappers -> Repositories -> Services -> Controllers -> Routes
