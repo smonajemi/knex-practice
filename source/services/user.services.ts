@@ -8,7 +8,7 @@ export const fetchUsers = async (): Promise<User[] | any> => {
     return {...result}
 }
 
-export const findUserById = async (userId: string): Promise<User | any> => {
+export const findUserById = async (userId: string): Promise<User> => {
     const user = await userRepository.fetchUserById(userId)
     if (!user) {
         throw new Error(`User with id: ${userId} does not exist`)
@@ -17,7 +17,7 @@ export const findUserById = async (userId: string): Promise<User | any> => {
     return response
 } 
 
-export const findUserByEmail = async (email: string): Promise<User | null> => {
+export const findUserByEmail = async (email: string): Promise<User> => {
     const user = await userRepository.fetchUserByEmail(email)
     if (!user) {
         throw new Error(`User ${email} does not exist`)
