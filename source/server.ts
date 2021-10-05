@@ -29,9 +29,8 @@ router.use('/', routes);
 
 /** Success */
 router.use('/', async (req, res) => {
-    const success = new Error('Backend is working');
     return res.status(200).json({
-        message: success.message
+        success: 'Backend is working'
     });
 });
 
