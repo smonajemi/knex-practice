@@ -12,7 +12,7 @@ const columns = [
     'is_deleted',
     'created_at',
     'updated_at',
-    'deleted_at'
+    'deleted_at',
 ]
 
 export const fetchUsers = async (): Promise<UserEntity[]> => await db<UserEntity>(TABLE_NAME)
