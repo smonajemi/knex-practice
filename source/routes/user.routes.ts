@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/users', controller.getUsers);
 router.get('/users/:userId', controller.getUser);
 
-// user
+// Post
 router.post('/users/createUser', controller.createUser);
 
 // Put
