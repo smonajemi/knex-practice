@@ -18,7 +18,6 @@ npm start
 npm run migrate:latest
 
 
-
 # Create migration:
 npm run migrate:make table_name
 
