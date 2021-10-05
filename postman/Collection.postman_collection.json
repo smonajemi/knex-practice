@@ -14,12 +14,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000",
+							"raw": "http://localhost:3000/users",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000"
+							"port": "3000",
+							"path": [
+								"users"
+							]
 						}
 					},
 					"response": []
@@ -51,7 +54,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"Amimohammad\",\r\n    \"lastName\" : \"Tavakoli\",\r\n    \"username\" : \"am.tavakoli1992@gmail.com\",\r\n    \"phoneNumber\": \"+989384117217\"\r\n}",
+							"raw": "{\r\n    \"username\": \"sina.monajemsi@com\",\r\n    \"firstName\": \"Sina\",\r\n    \"lastName\": \"Monajemi\",\r\n    \"phoneNumber\": \"6474665659\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -59,14 +62,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users",
+							"raw": "http://localhost:3000/users/createUser",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"users"
+								"users",
+								"createUser"
 							]
 						}
 					},
@@ -79,7 +83,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"Senna\"\r\n}",
+							"raw": "{\r\n    \"phoneNumber\": \"+16474665659\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -87,7 +91,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users/{{userId}}",
+							"raw": "http://localhost:3000/users/updateUser/{{userId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -95,6 +99,7 @@
 							"port": "3000",
 							"path": [
 								"users",
+								"updateUser",
 								"{{userId}}"
 							]
 						}
@@ -107,7 +112,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users/{{userId}}",
+							"raw": "http://localhost:3000/users/deleteUser/{{userId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -115,6 +120,7 @@
 							"port": "3000",
 							"path": [
 								"users",
+								"deleteUser",
 								"{{userId}}"
 							]
 						}

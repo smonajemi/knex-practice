@@ -8,6 +8,7 @@ const columns = [
     'username',
     'first_name',
     'last_name',
+    'phone_number',
     'is_deleted',
     'created_at',
     'updated_at',

@@ -46,8 +46,8 @@ export const updateUser = async (userId: string, user: User): Promise<User> => {
 
 export const deleteUser = async (userId: string, user: User): Promise<User> => {
     const userEntity = mapUserEntityFromUser(user)
+    console.log(userEntity)
     userEntity.is_deleted = true
-    userEntity.username = ''
     await userRepository.updateUser(userId, userEntity)
     const [db_response] = await userRepository.deleteUser(userId, userEntity)
     const response = mapUserFromUserEntity(db_response)

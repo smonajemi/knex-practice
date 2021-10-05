@@ -3,16 +3,16 @@ import * as controller from '../controllers/user.controller';
 const router = express.Router();
 
 // Get
-router.get('/', controller.getUsers);
+router.get('/users', controller.getUsers);
 router.get('/users/:userId', controller.getUser);
 
 // user
-router.post('/users', controller.createUser);
+router.post('/users/createUser', controller.createUser);
 
 // Put
-router.put('/users/:userId', controller.updateUser);
+router.put('/users/updateUser/:userId', controller.updateUser);
 
 // Delete
-router.delete('/users/:userId', controller.deleteUser);
+router.delete('/users/deleteUser/:userId', controller.deleteUser);
 
 export = router;
