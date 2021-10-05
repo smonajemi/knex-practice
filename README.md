@@ -5,6 +5,11 @@ Right-click to open ERD editor, and enjoy designing your diagram
 
 Note: Every design that you perform will generate automatically as text data in that JSON file.
 
+
+# Postman:
+Please import postman collection and env from postman folder - if you add new requests, please update the postman for the rest of the team
+
+
 # Step 1
 git pull
 # Step 2
@@ -25,6 +30,3 @@ npm run migrate:rollback --> if entered once, goes back one migration, and if tw
 
 # Flow:
 Migration -> Types -> Mappers -> Repository -> Services -> Controllers -> Routes
-
-# Postman:
-Please import postman collection and env from postman folder - if you add new requests, please update the postman for the rest of the team
