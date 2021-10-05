@@ -13,9 +13,9 @@ Export collection as v2.1(recommended)
 
 
 # Step 1:
-Remote = origin
+Remote: origin
 
-Branch = master
+Branch: master
 
 git pull
 
