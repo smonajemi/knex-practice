@@ -12,7 +12,7 @@ Please import postman collection and env from postman folder - if you add new re
 Export collection as v2.1(recommended)
 
 
-# Step 1:
+# Step 1: Remote = origin
 git pull
 # Step 2:
 npm start
