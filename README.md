@@ -7,9 +7,13 @@ npm run migrate:latest
 
 
 
-# Migrations:
+# Create migration:
 npm run migrate:make table_name
+
+# Pull the latest migration:
 npm run migrate:latest
+
+# Undo migration:
 npm run migrate:rollback --> if entered once, goes back once, if twice, cleares out the table
 
 
