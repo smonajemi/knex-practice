@@ -1,7 +1,7 @@
 # Step 1
 Git pull
 # Step 2
-nmp start
+npm start
 # Step 3
 npm run migrate:latest
 
