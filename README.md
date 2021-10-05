@@ -3,7 +3,7 @@ Install extension in vs code: ERD Editor
 
 Right-click to open ERD editor, and enjoy designing your diagram
 
-Note: Every design that you perform will generate automatically as text data in that JSON file.
+Note: Every design that you perform will generate automatically as text data in the JSON file.
 
 
 # Postman:
