@@ -9,7 +9,7 @@ Note: Every design that you perform will generate automatically as a JSON file.
 # Postman:
 Please import postman collection and env from postman folder - if you add new requests, please update the postman for the rest of the team
 
-Export as v2(recommended)
+Export collection as v2.1(recommended)
 
 
 # Step 1:
