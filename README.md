@@ -1,4 +1,4 @@
-# How to use and collaborate:
+# ERD Diagram:
 Install extension in vs code: ERD Editor
 
 Right-click to open ERD editor, and enjoy designing your diagram
