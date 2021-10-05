@@ -4,7 +4,7 @@ import { User } from '../types/user.types';
 import axios, { AxiosResponse } from 'axios';
 import { mapUserEntityFromUser } from '../mappers/user.mappers';
 
-
+// getting all users
 export const getUsers = async (req: Request, res: Response, next: NextFunction) => {
    try {
     const result: User[] | any = await userService.fetchUsers()
