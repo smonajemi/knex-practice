@@ -54,7 +54,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"sina.monajemsi@com\",\r\n    \"firstName\": \"Sina\",\r\n    \"lastName\": \"Monajemi\",\r\n    \"phoneNumber\": \"6474665659\"\r\n}",
+							"raw": "{\r\n    \"username\": \"test@mail.com\",\r\n    \"firstName\": \"test\",\r\n    \"lastName\": \"User\",\r\n    \"phoneNumber\": \"0000\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

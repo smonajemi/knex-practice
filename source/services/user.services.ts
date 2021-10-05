@@ -34,7 +34,7 @@ export const createUser = async (user: User): Promise<User> => {
     const userEntity = mapUserEntityFromUser(user)  
     const [db_response] = await userRepository.createUser(userEntity)
     const response = mapUserFromUserEntity(db_response)
-    return {...response}
+    return response
 }
 
 export const updateUser = async (userId: string, user: User): Promise<User> => {
