@@ -11,7 +11,7 @@ export const fetchUsers = async (): Promise<User[] | any> => {
 export const findUserById = async (userId: string): Promise<User | any> => {
     const user = await userRepository.fetchUserById(userId)
     if (!user) {
-        throw new Error(`User with ${userId} does not exist`)
+        throw new Error(`User with id: ${userId} does not exist`)
     }
     const response = mapUserFromUserEntity(user)
     return response
@@ -40,7 +40,7 @@ export const createUser = async (user: User): Promise<User> => {
 export const updateUser = async (userId: string, user: User): Promise<User> => {
     const userEntity = mapUserEntityFromUser(user)
     if (!userEntity.username) {
-        throw new Error(`User with ${userId} does not exist`)
+        throw new Error(`User with id: ${userId} does not exist`)
     }
     const [db_response] = await userRepository.updateUser(userId, userEntity)
     const response = mapUserFromUserEntity(db_response)
@@ -50,7 +50,7 @@ export const updateUser = async (userId: string, user: User): Promise<User> => {
 export const deleteUser = async (userId: string): Promise<User> => {
     const user = await userRepository.fetchUserById(userId)
     if (!user) {
-        throw new Error(`User with ${userId} does not exist`)
+        throw new Error(`User with id: ${userId} does not exist`)
     }
     const [db_response] = await userRepository.deleteUser(userId)
     const response = mapUserFromUserEntity(db_response)
