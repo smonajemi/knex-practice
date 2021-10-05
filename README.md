@@ -11,6 +11,8 @@ Please import postman collection and env from postman folder - if you add new re
 
 Export collection as v2.1(recommended)
 
+# Flow:
+Migration -> Types -> Mappers -> Repositories -> Services -> Controllers -> Routes
 
 # Step 1:
 Remote: origin
@@ -34,5 +36,3 @@ npm run migrate:latest
 # Undo migration:
 npm run migrate:rollback --> if entered once, goes back one migration, and if twice, it cleares out the table
 
-# Flow:
-Migration -> Types -> Mappers -> Repositories -> Services -> Controllers -> Routes
