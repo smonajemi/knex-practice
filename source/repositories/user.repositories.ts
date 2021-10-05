@@ -1,7 +1,6 @@
 import { db } from '../../db/db'
 import { UserEntity } from '../types/user.types'
 
-
 const TABLE_NAME = 'users'
 const columns = [
     'id',
