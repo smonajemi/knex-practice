@@ -16,7 +16,7 @@ export const fetchUsers = async (): Promise<UserEntity[] | any> => {
     return await db<UserEntity>(TABLE_NAME).whereNull('deleted_at').select(columns)
 }
 export const fetchUserByEmail = async (email: string): Promise<UserEntity> => await db<UserEntity>(TABLE_NAME).whereNull('deleted_at').where('username', email).first(columns)
-export const createUser = async (user: UserEntity): Promise<UserEntity[]> => await db<UserEntity>(TABLE_NAME).insert({...user, created_at: db.raw('now()'), updated_at: db.raw('now()')})
+export const createUser = async (user: UserEntity): Promise<UserEntity[]> => await db<UserEntity>(TABLE_NAME).insert({...user, created_at: db.raw('now()'), updated_at: db.raw('now()')}, columns)
 export const updateUser = async (userId: string ,user: UserEntity): Promise<UserEntity[]> => await db<UserEntity>(TABLE_NAME)
     .where('id', userId)
     .whereNull('deleted_at')

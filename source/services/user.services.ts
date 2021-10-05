@@ -7,8 +7,7 @@ import { mapUserEntityFromUser, mapUserFromUserEntity } from "../mappers/user.ma
 
 export const fetchUsers = async (): Promise<User[] | any> => {
     const result = await userRepository.fetchUsers()
-    console.log(result)
-    return "{...result}"
+    return {...result}
 }
 
 export const findUserByEmail = async (email: string): Promise<User | null> => {
@@ -21,18 +20,13 @@ export const findUserByEmail = async (email: string): Promise<User | null> => {
     return response
 }
 
-export const createUser = async (user: User): Promise<User | any> => {
-    // const existingUser = await findUserByEmail(user.username)
-    // if (existingUser) {
-    //     throw new Error(`User ${user.username} already exists`)
-    // }
-    
+export const createUser = async (user: User): Promise<User> => {
+    const existingUser = await findUserByEmail(user.username)
+    if (existingUser) {
+        throw new Error(`User ${user.username} already exists`)
+    }
     const userEntity = mapUserEntityFromUser(user)  
     const [db_response] = await userRepository.createUser(userEntity)
-    const datab = mapUserFromUserEntity(userEntity)
-    console.log(datab)
-
-    // const [db_response] = await userRepository.createUser(userEntity)
-    // const response = mapUserFromUserEntity(db_response)
-    console.log(userEntity)
+    const response = mapUserFromUserEntity(db_response)
+    return {...response}
 }

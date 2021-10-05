@@ -1,14 +1,13 @@
 import express from 'express';
-import controller from '../controllers/user.controller';
+import * as controller from '../controllers/user.controller';
 const router = express.Router();
 
 // Get
-router.get('/', controller.home)
-router.get('/users', controller.getUsers);
+router.get('/', controller.getUsers);
 router.get('/users/:id', controller.getUser);
 
 // user
-router.post('/users', controller.createUser);
+router.post('/user', controller.createUser);
 
 // Put
 router.put('/users/:id', controller.updateUser);
