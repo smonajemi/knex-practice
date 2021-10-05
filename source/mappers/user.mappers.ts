@@ -13,6 +13,7 @@ export const mapUserFromUserEntity = (entity: UserEntity): User => {
 
 export const mapUserEntityFromUser = (user: User): UserEntity => {
     return {
+        // no id required since uuid is generating it for backend
         username: user.username,
         first_name: user.firstName,
         last_name: user.lastName,
