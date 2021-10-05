@@ -2,12 +2,11 @@ import { Request, Response, NextFunction } from 'express';
 import * as userService from '../services/user.services'
 import { User } from '../types/user.types';
 import axios, { AxiosResponse } from 'axios';
-import { mapUserEntityFromUser } from '../mappers/user.mappers';
 
 // getting all users
 export const getUsers = async (req: Request, res: Response, next: NextFunction) => {
    try {
-    const result: User[] | any = await userService.fetchUsers()
+    const result = await userService.fetchUsers()
     req.body = result
     res.send(req.body)
     } catch (err) {
@@ -26,7 +25,7 @@ export const getUsers = async (req: Request, res: Response, next: NextFunction) 
 export const getUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const {userId} = req.params
-        const user: User = await userService.findUserById(userId)
+        const user = await userService.findUserById(userId)
         req.body = user
         res.send(req.body)
         } catch (err) {
@@ -63,7 +62,7 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
 export const updateUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const {userId} = req.params;
-      const user: User = await userService.updateUser(userId,req.body)
+      const user = await userService.updateUser(userId,req.body)
       req.body = user
       res.send(req.body)
         } catch (err) {
@@ -82,7 +81,7 @@ export const updateUser = async (req: Request, res: Response, next: NextFunction
 export const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const {userId} = req.params;
-        const user: User = await userService.deleteUser(userId,req.body)
+        const user = await userService.deleteUser(userId,req.body)
         req.body = user
         res.send(req.body)
         } catch (err) {
