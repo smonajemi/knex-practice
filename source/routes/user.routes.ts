@@ -4,15 +4,15 @@ const router = express.Router();
 
 // Get
 router.get('/', controller.getUsers);
-router.get('/users/:id', controller.getUser);
+router.get('/users/:userId', controller.getUser);
 
 // user
-router.post('/user', controller.createUser);
+router.post('/users', controller.createUser);
 
 // Put
-router.put('/users/:id', controller.updateUser);
+router.put('/users/:userId', controller.updateUser);
 
 // Delete
-router.delete('/users/:id', controller.deleteUser);
+router.delete('/users/:userId', controller.deleteUser);
 
 export = router;

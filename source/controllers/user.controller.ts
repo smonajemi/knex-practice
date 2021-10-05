@@ -2,6 +2,44 @@ import { Request, Response, NextFunction } from 'express';
 import * as userService from '../services/user.services'
 import { User } from '../types/user.types';
 import axios, { AxiosResponse } from 'axios';
+import { mapUserEntityFromUser } from '../mappers/user.mappers';
+
+
+export const getUsers = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+    const result: User[] | any = await userService.fetchUsers()
+    req.body = result
+    res.send(req.body)
+    } catch (err) {
+    let error = ''
+    for (const [key, value] of Object.entries([err])) {
+        error = `${value}`
+    }
+    res.json({
+        message: error
+    });
+    next(error)
+}
+};
+
+// getting a single user
+export const getUser = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const {userId} = req.params
+        const user: User = await userService.findUserById(userId)
+        req.body = user
+        res.send(req.body)
+        } catch (err) {
+        let error = ''
+        for (const [key, value] of Object.entries([err])) {
+            error = `${value}`
+        }
+        res.json({
+            message: error
+        });
+        next(error)
+    }
+};
 
 // adding a user
 export const createUser = async (req: Request, res: Response, next: NextFunction) => {
@@ -21,24 +59,41 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
     }
 };
 
-export const getUsers = async (req: Request, res: Response, next: NextFunction) => {
-   const result: User[] | any = await userService.fetchUsers()
-   req.body = result
-   res.send(req.body)
-};
-
-// getting a single user
-export const getUser = async (req: Request, res: Response, next: NextFunction) => {
-    res.send('getUser is working')
-};
-
 // updating a user
 export const updateUser = async (req: Request, res: Response, next: NextFunction) => {
-    res.send('updateUser is working')
+    try {
+      const {userId} = req.params;
+      const user: User = await userService.updateUser(userId,req.body)
+      req.body = user
+      res.send(req.body)
+        } catch (err) {
+        let error = ''
+        for (const [key, value] of Object.entries([err])) {
+            error = `${value}`
+        }
+        res.json({
+            message: error
+        });
+        next(error)
+    }
 };
 
 // deleting a user
 export const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
-    res.send('deleteUser is working')
+    try {
+        const {userId} = req.params;
+        const user: User = await userService.deleteUser(userId,req.body)
+        req.body = user
+        res.send(req.body)
+        } catch (err) {
+        let error = ''
+        for (const [key, value] of Object.entries([err])) {
+            error = `${value}`
+        }
+        res.json({
+            message: error
+        });
+        next(error)
+    }
 };
 
