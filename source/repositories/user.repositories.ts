@@ -35,7 +35,7 @@ export const updateUser = async (userId: string ,user: UserEntity): Promise<User
     .whereNull('deleted_at')
     .update({...user, updated_at: db.raw('now()')}, columns)
 
-export const deleteUser = async (userId: string, user: UserEntity): Promise<UserEntity[]> => await db<UserEntity>(TABLE_NAME)
+export const deleteUser = async (userId: string): Promise<UserEntity[]> => await db<UserEntity>(TABLE_NAME)
     .where('id', userId)
-    .update({updated_at: db.raw('now()'), deleted_at: db.raw('now()')}, columns)
+    .update({updated_at: db.raw('now()'), deleted_at: db.raw('now()'), is_deleted: true}, columns)
     

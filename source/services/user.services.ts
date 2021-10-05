@@ -44,11 +44,8 @@ export const updateUser = async (userId: string, user: User): Promise<User> => {
     return response
 }
 
-export const deleteUser = async (userId: string, user: User): Promise<User> => {
-    const userEntity = mapUserEntityFromUser(user)
-    userEntity.is_deleted = true
-    await userRepository.updateUser(userId, userEntity)
-    const [db_response] = await userRepository.deleteUser(userId, userEntity)
+export const deleteUser = async (userId: string): Promise<User> => {
+    const [db_response] = await userRepository.deleteUser(userId)
     const response = mapUserFromUserEntity(db_response)
     return response
 }

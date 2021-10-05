@@ -81,7 +81,7 @@ export const updateUser = async (req: Request, res: Response, next: NextFunction
 export const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const {userId} = req.params;
-        const user = await userService.deleteUser(userId,req.body)
+        const user = await userService.deleteUser(userId)
         req.body = user
         res.send(req.body)
         } catch (err) {
