@@ -1,5 +1,5 @@
 # Step 1
-Git pull
+git pull
 # Step 2
 npm start
 # Step 3
