@@ -14,6 +14,7 @@ Export collection as v2.1(recommended)
 
 # Step 1:
 Remote = origin
+
 git pull
 # Step 2:
 npm start
