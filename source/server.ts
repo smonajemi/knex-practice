@@ -8,7 +8,7 @@ const router: Express = express();
 
 /** Logging */
 router.use(morgan('dev'));
-router.use(express.urlencoded({ extended: true }));
+router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 
 
