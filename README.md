@@ -13,11 +13,11 @@ Export collection as v2.1(recommended)
 
 
 # Step 1:
-git pull
-
 Remote = origin
 
 Branch = master
+
+git pull
 
 # Step 2:
 npm start
