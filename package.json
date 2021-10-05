@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "source/server.ts",
   "scripts": {
-    "migrate:make": "npx knex migrate:make init --migrations-directory db/migrations -x ts",
+    "migrate:make": "npx knex migrate:make --migrations-directory db/migrations -x ts",
     "migrate:latest": "npx knex migrate:latest --knexfile db/knexfile.ts",
     "migrate:rollback": "npx knex migrate:rollback --knexfile db/knexfile.ts",
     "start": "nodemon source/server.ts",

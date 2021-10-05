@@ -5,6 +5,8 @@ export interface User extends BusinessObject {
     username: string;
     firstName: string;
     lastName: string;
+    phoneNumber: number;
+    isDeleted: boolean;
 }
 
 export interface UserEntity extends Entity {
@@ -12,4 +14,6 @@ export interface UserEntity extends Entity {
     username: string;
     first_name: string;
     last_name: string;
+    phone_number: number;
+    is_deleted: boolean;
 }

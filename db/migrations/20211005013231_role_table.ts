@@ -3,19 +3,20 @@ import {Knex} from "knex";
 
 export async function up(knex: Knex): Promise<any> {
     await knex.schema.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
-    await knex.schema.createTable('users',(table) => {
+    await knex.schema.createTable('roles',(table) => {
         table.uuid('id')
-        .notNullable()
-        .primary()
-        .unique()
-        .defaultTo(knex.raw('uuid_generate_v4()'))
+            .notNullable()
+            .primary()
+            .unique()
+            .defaultTo(knex.raw('uuid_generate_v4()'))
 
-        table.string('username')
-        .notNullable()
-        .unique()
+        table.uuid('user_id')
+            .references('id')
+            .inTable('users')
+            
+        table.string('title')
 
-        table.string('first_name')
-        table.string('last_name')
+        table.boolean('is_deleted')
 
         table.timestamp('created_at').defaultTo(knex.fn.now())
         table.timestamp('updated_at').defaultTo(knex.fn.now())
@@ -25,6 +26,6 @@ export async function up(knex: Knex): Promise<any> {
 
 
 export async function down(knex: Knex): Promise<any> {
-    await  knex.schema.dropTable("users")
+    await  knex.schema.dropTable("roles")
 }
 

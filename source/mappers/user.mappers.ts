@@ -5,7 +5,9 @@ export const mapUserFromUserEntity = (entity: UserEntity): User => {
         id: entity.id,
         username: entity.username,
         firstName: entity.first_name,
-        lastName: entity.last_name
+        lastName: entity.last_name,
+        phoneNumber: entity.phone_number,
+        isDeleted: entity.is_deleted
     }
 }
 
@@ -14,5 +16,7 @@ export const mapUserEntityFromUser = (user: User): UserEntity => {
         username: user.username,
         first_name: user.firstName,
         last_name: user.lastName,
+        phone_number: user.phoneNumber,
+        is_deleted: user.isDeleted
     }
 }
