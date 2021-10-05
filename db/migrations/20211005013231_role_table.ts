@@ -14,7 +14,7 @@ export async function up(knex: Knex): Promise<any> {
             .references('id')
             .inTable('users')
             
-        table.string('title')
+        table.string('role')
 
         table.boolean('is_deleted')
 
