@@ -53,7 +53,7 @@ export const createUser = async (
   const profile = await findRoleByUserId(newProfile.userId);
   const result = profile ? profile : await createRole(newProfile);
   const response = mapUserFromUserEntity(db_response);
-  return { ...response, roleTable: result };
+  return { ...response, roleEntity: result };
 };
 
 export const updateUser = async (userId: string, user: User): Promise<User> => {
