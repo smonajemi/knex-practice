@@ -50,7 +50,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"test@mail.com\",\r\n    \"firstName\": \"test\",\r\n    \"lastName\": \"User\",\r\n    \"phoneNumber\": \"0000\"\r\n}",
+							"raw": "{\r\n    \"username\": \"test3@mail.com\",\r\n    \"firstName\": \"test\",\r\n    \"lastName\": \"user\",\r\n    \"phoneNumber\": \"0000\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -118,6 +118,61 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Get role by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{homeUrl}}/roles/{{userId}}",
+							"host": [
+								"{{homeUrl}}"
+							],
+							"path": [
+								"roles",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update role",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{homeUrl}}/roles/updateRole/{{userId}}",
+							"host": [
+								"{{homeUrl}}"
+							],
+							"path": [
+								"roles",
+								"updateRole",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Verifications",
+			"item": []
 		}
 	]
 }
