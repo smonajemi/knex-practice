@@ -14,12 +14,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users",
-							"protocol": "http",
+							"raw": "{{homeUrl}}/users",
 							"host": [
-								"localhost"
+								"{{homeUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"users"
 							]
@@ -33,12 +31,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users/{{userId}}",
-							"protocol": "http",
+							"raw": "{{homeUrl}}/users/{{userId}}",
 							"host": [
-								"localhost"
+								"{{homeUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"users",
 								"{{userId}}"
@@ -62,12 +58,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users/createUser",
-							"protocol": "http",
+							"raw": "{{homeUrl}}/users/createUser",
 							"host": [
-								"localhost"
+								"{{homeUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"users",
 								"createUser"
@@ -91,12 +85,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users/updateUser/{{userId}}",
-							"protocol": "http",
+							"raw": "{{homeUrl}}/users/updateUser/{{userId}}",
 							"host": [
-								"localhost"
+								"{{homeUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"users",
 								"updateUser",
@@ -112,12 +104,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users/deleteUser/{{userId}}",
-							"protocol": "http",
+							"raw": "{{homeUrl}}/users/deleteUser/{{userId}}",
 							"host": [
-								"localhost"
+								"{{homeUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"users",
 								"deleteUser",

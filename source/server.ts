@@ -8,7 +8,7 @@ const router: Express = express();
 
 /** Logging */
 router.use(morgan('dev'));
-router.use(express.urlencoded({ extended: true }));
+router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 
 
@@ -26,6 +26,13 @@ router.use((req, res, next) => {
 
 /** Routes */
 router.use('/', routes);
+
+/** Success */
+router.use('/', async (req, res) => {
+    return res.status(200).json({
+        success: 'Backend is working'
+    });
+});
 
 /** Error handling */
 router.use((req, res, next) => {

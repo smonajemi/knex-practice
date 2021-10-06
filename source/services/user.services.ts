@@ -8,19 +8,19 @@ export const fetchUsers = async (): Promise<User[] | any> => {
     return {...result}
 }
 
-export const findUserById = async (userId: string): Promise<User | any> => {
-    const user: UserEntity = await userRepository.fetchUserById(userId)
+export const findUserById = async (userId: string): Promise<User> => {
+    const user = await userRepository.fetchUserById(userId)
     if (!user) {
-        throw new Error(`User with ${userId} does not exist`)
+        throw new Error(`User with id: ${userId} does not exist`)
     }
     const response = mapUserFromUserEntity(user)
     return response
 } 
 
-export const findUserByEmail = async (email: string): Promise<User | null> => {
+export const findUserByEmail = async (email: string): Promise<User> => {
     const user = await userRepository.fetchUserByEmail(email)
     if (!user) {
-        return null
+        throw new Error(`User ${email} does not exist`)
     }
     const response = mapUserFromUserEntity(user)
     return response
@@ -39,16 +39,20 @@ export const createUser = async (user: User): Promise<User> => {
 
 export const updateUser = async (userId: string, user: User): Promise<User> => {
     const userEntity = mapUserEntityFromUser(user)
+    if (!userEntity.username) {
+        throw new Error(`User with id: ${userId} does not exist`)
+    }
     const [db_response] = await userRepository.updateUser(userId, userEntity)
     const response = mapUserFromUserEntity(db_response)
     return response
 }
 
-export const deleteUser = async (userId: string, user: User): Promise<User> => {
-    const userEntity = mapUserEntityFromUser(user)
-    userEntity.is_deleted = true
-    await userRepository.updateUser(userId, userEntity)
-    const [db_response] = await userRepository.deleteUser(userId, userEntity)
+export const deleteUser = async (userId: string): Promise<User> => {
+    const user = await userRepository.fetchUserById(userId)
+    if (!user) {
+        throw new Error(`User with id: ${userId} does not exist`)
+    }
+    const [db_response] = await userRepository.deleteUser(userId)
     const response = mapUserFromUserEntity(db_response)
     return response
 }
