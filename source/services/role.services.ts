@@ -26,20 +26,12 @@ export const createRole = async (role: Role): Promise<Role> => {
 };
 
 export const updateRole = async (userId: string, role: Role): Promise<Role> => {
-  const existingRole = await findRoleByUserId(userId)
+  const existingRole: Role = await findRoleByUserId(userId) as Role
   if (!existingRole) {
     throw new Error(`Cannot update role for user with id ${userId}`);
   }
   const roleEntity = mapRoleEntityFromRole(role)
-  const [db_response] = await roleRepository.updateRole(userId, roleEntity.id as string, roleEntity);
+  const [db_response] = await roleRepository.updateRole(userId, existingRole.id as string, roleEntity);
   return mapRoleFromRoleEntity(db_response);
 };
 
-export const deleteRole = async (userId: string): Promise<Role> => {
-  const existingRole = await findRoleByUserId(userId)
-  if (!existingRole) {
-    throw new Error(`Cannot delete role for user with id ${userId}`);
-  }
-  const [db_response] = await roleRepository.deleteRole(userId, existingRole.id as string);
-  return mapRoleFromRoleEntity(db_response);
-};

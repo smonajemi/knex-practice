@@ -5,4 +5,7 @@ const router = express.Router();
 // Get
 router.get('/roles/:userId', controller.getRoleByUserId);
 
-export = router;
+// Put
+router.put('/roles/updateRole/:userId', controller.updateRole);
+
+export default router;

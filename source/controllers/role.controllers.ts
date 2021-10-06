@@ -3,7 +3,7 @@ import * as roleService from "../services/role.services";
 import { Role } from "../types/role.types";
 import axios, { AxiosResponse } from "axios";
 
-// getting a single user
+// get role by userId
 export const getRoleByUserId = async (
   req: Request,
   res: Response,
@@ -26,7 +26,7 @@ export const getRoleByUserId = async (
   }
 };
 
-// updating a user
+// update role by userId
 export const updateRole = async (
   req: Request,
   res: Response,
@@ -35,29 +35,6 @@ export const updateRole = async (
   try {
     const { userId } = req.params;
     const user = await roleService.updateRole(userId, req.body);
-    req.body = user;
-    res.send(req.body);
-  } catch (err) {
-    let error = "";
-    for (const [key, value] of Object.entries([err])) {
-      error = `${value}`;
-    }
-    res.json({
-      message: error,
-    });
-    next(error);
-  }
-};
-
-// deleting a user
-export const deleteRole = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  try {
-    const { userId } = req.params;
-    const user = await roleService.deleteRole(userId);
     req.body = user;
     res.send(req.body);
   } catch (err) {

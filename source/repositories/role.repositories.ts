@@ -33,18 +33,3 @@ export const updateRole = async (
     .where({ 'id': roleId, 'user_id': userId })
     .whereNull("deleted_at")
     .update({ ...role, updated_at: db.raw("now()") }, columns);
-
-export const deleteRole = async (
-  userId: string,
-  roleId: string
-): Promise<RoleEntity[]> =>
-  await db<RoleEntity>(TABLE_NAME)
-    .where({ 'id': roleId, 'user_id': userId })
-    .update(
-      {
-        updated_at: db.raw("now()"),
-        deleted_at: db.raw("now()"),
-        is_deleted: true,
-      },
-      columns
-    );
