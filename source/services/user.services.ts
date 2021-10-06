@@ -71,7 +71,6 @@ export const deleteUser = async (userId: string): Promise<User | any> => {
 
   const roleEntity: RoleEntity = await roleRepository.fetchRoleByUserId(userId)
   roleEntity.is_deleted = true
-  roleEntity.updated_at = new Date().toISOString()
   roleEntity.deleted_at = new Date().toISOString()
   await roleRepository.updateRole(userId, roleEntity.id as string, roleEntity)
   const [db_response] = await userRepository.deleteUser(userId);
