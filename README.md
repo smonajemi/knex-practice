@@ -12,7 +12,7 @@ Please import postman collection and env from postman folder - if you add new re
 Export collection as v2.1(recommended)
 
 # Flow:
-Migration -> Types -> Mappers -> Repositories -> Services -> Controllers -> Routes
+Migration -> Types -> Mappers -> Repositories -> Services -> Controllers -> Routers -> Routes
 
 # Step 1:
 Remote: origin
