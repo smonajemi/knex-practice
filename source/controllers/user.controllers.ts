@@ -2,6 +2,8 @@ import { Request, Response, NextFunction } from "express";
 import * as userService from "../services/user.services";
 import { User } from "../types/user.types";
 import axios, { AxiosResponse } from "axios";
+import path from "path";
+const filename = path.basename(__filename)
 
 // getting all users
 export const getUsers = async (
@@ -20,6 +22,7 @@ export const getUsers = async (
     }
     res.json({
       message: error,
+      root: filename
     });
     next(error);
   }
@@ -43,6 +46,7 @@ export const getUser = async (
     }
     res.json({
       message: error,
+      root: filename
     });
     next(error);
   }
@@ -65,6 +69,7 @@ export const createUser = async (
     }
     res.json({
       message: error,
+      root: filename
     });
     next(error);
   }
@@ -88,6 +93,7 @@ export const updateUser = async (
     }
     res.json({
       message: error,
+      root: filename
     });
     next(error);
   }
@@ -111,6 +117,7 @@ export const deleteUser = async (
     }
     res.json({
       message: error,
+      root: filename
     });
     next(error);
   }

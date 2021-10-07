@@ -28,18 +28,20 @@ router.use((req, res, next) => {
 router.use('/', routes);
 
 /** Success */
-router.use('/', async (req, res) => {
-    return res.status(200).json({
+router.use('/', async (req, res, next) => {
+    res.status(200).json({
         success: 'Backend is working'
     });
+    next()
 });
 
 /** Error handling */
 router.use((req, res, next) => {
     const error = new Error('not found');
-    return res.status(404).json({
+    res.status(404).json({
         message: error.message
     });
+    next()
 });
 
 /** Server */

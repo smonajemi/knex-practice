@@ -24,7 +24,7 @@ export const fetchUserByEmail = async (email: string): Promise<UserEntity> => aw
     .whereNull('deleted_at').where('username', email).first(columns)
 
 export const createUser = async (user: UserEntity): Promise<UserEntity[]> => await db<UserEntity>(TABLE_NAME)
-    .insert({...user, created_at: db.raw('now()'), updated_at: db.raw('now()')}, columns)
+    .insert({...user, created_at: db.raw('now()'), updated_at: db.raw('now()'), is_deleted: false}, columns)
 
 export const updateUser = async (userId: string ,user: UserEntity): Promise<UserEntity[]> => await db<UserEntity>(TABLE_NAME)
     .where('id', userId).whereNull('deleted_at').update({...user, updated_at: db.raw('now()')}, columns)

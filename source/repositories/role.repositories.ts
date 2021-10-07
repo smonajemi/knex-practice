@@ -20,7 +20,7 @@ export const fetchRoleByUserId = async (userId: string): Promise<RoleEntity> =>
 
 export const createRole = async (role: RoleEntity): Promise<RoleEntity[]> =>
   await db<RoleEntity>(TABLE_NAME).insert(
-    { ...role, created_at: db.raw("now()"), updated_at: db.raw("now()") },
+    { ...role, created_at: db.raw("now()"), updated_at: db.raw("now()"), is_deleted: false },
     columns
   );
 

@@ -2,6 +2,8 @@ import { Request, Response, NextFunction } from "express";
 import * as roleService from "../services/role.services";
 import { Role } from "../types/role.types";
 import axios, { AxiosResponse } from "axios";
+import path from "path";
+const filename = path.basename(__filename)
 
 // get role by userId
 export const getRoleByUserId = async (
@@ -21,6 +23,7 @@ export const getRoleByUserId = async (
     }
     res.json({
       message: error,
+      root: filename
     });
     next(error);
   }
@@ -44,6 +47,7 @@ export const updateRole = async (
     }
     res.json({
       message: error,
+      root: filename
     });
     next(error);
   }

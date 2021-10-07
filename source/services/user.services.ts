@@ -35,21 +35,20 @@ export const createUser = async (
   user: User,
   role?: Role
 ): Promise<User | any> => {
-  console.log(user)
   const existingUser = await findUserByEmail(user.username);
   if (existingUser) {
     throw new Error(`User ${user.username} already exists`);
   }
+  const getRole = user as any
+  const userEntity = mapUserEntityFromUser(user);
+  const [db_response] = await userRepository.createUser(userEntity);
   const newProfile: Role = role
     ? role
     : {
-      userId: "",
-      role: "",
+      userId: db_response.id as string,
+      role: getRole.role,
       isDeleted: false,
     };
-  const userEntity = mapUserEntityFromUser(user);
-  const [db_response] = await userRepository.createUser(userEntity);
-  newProfile.userId = db_response.id as string;
   const profile = await findRoleByUserId(newProfile.userId);
   const result = profile ? profile : await createRole(newProfile);
   const response = mapUserFromUserEntity(db_response);
