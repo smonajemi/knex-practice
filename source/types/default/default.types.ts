@@ -1,13 +1,13 @@
-import Raw from 'knex'
+import Raw from "knex";
 
 export interface Entity {
-    created_at?: string;
-    updated_at?: string;
-    deleted_at?: string;
+  created_at?: string;
+  updated_at?: string;
+  deleted_at?: string;
 }
 
 export interface BusinessObject {
-    id?: string;
+  id?: string;
 }
 
 // export interface PagingParams {

@@ -1,5 +1,5 @@
 import express from 'express';
-import * as controller from '../controllers/user.controller';
+import * as controller from '../controllers/user.controllers';
 const router = express.Router();
 
 // Get
@@ -15,4 +15,4 @@ router.put('/users/updateUser/:userId', controller.updateUser);
 // Delete
 router.delete('/users/deleteUser/:userId', controller.deleteUser);
 
-export = router;
+export default router;

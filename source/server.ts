@@ -1,7 +1,7 @@
 import http from 'http';
 import express, { Express } from 'express';
 import morgan from 'morgan';
-import routes from './routes/user.routes';
+import routes from './routes/allRoutes.routes';
 import dotenv from 'dotenv';
 
 const router: Express = express();
@@ -28,14 +28,14 @@ router.use((req, res, next) => {
 router.use('/', routes);
 
 /** Success */
-router.use('/', async (req, res) => {
+router.use('/', async (req, res, next) => {
     return res.status(200).json({
         success: 'Backend is working'
     });
 });
 
 /** Error handling */
-router.use((req, res, next) => {
+router.use((req, res) => {
     const error = new Error('not found');
     return res.status(404).json({
         message: error.message
