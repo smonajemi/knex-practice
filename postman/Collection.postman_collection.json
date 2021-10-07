@@ -50,7 +50,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"test3@mail.com\",\r\n    \"firstName\": \"test\",\r\n    \"lastName\": \"user\",\r\n    \"phoneNumber\": \"0000\"\r\n}",
+							"raw": "{\r\n    \"username\": \"test1@mail.com\",\r\n    \"firstName\": \"test\",\r\n    \"lastName\": \"user\",\r\n    \"phoneNumber\": \"0000\",\r\n    \"role\": \"tester\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -77,7 +77,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"phoneNumber\": \"+16474665659\"\r\n}",
+							"raw": "{\r\n    \"phoneNumber\": \"+00\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -147,7 +147,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"role\": \"admin\"\r\n}",
+							"raw": "{\r\n    \"role\": \"user\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
