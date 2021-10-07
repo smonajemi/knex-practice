@@ -5,6 +5,7 @@ Right-click to open ERD editor, and enjoy designing your diagram
 
 Note: Every design that you perform will generate automatically as a JSON file.
 
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dineug.vuerd-vscode
 
 # Postman:
 Please import postman collection and env from postman folder - if you add new requests, please update the postman for the rest of the team
