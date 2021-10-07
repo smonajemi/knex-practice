@@ -36,7 +36,7 @@ npm run migrate:latest
 # Undo migration:
 npm run migrate:rollback --> if entered once, goes back one migration, and if twice, it cleares out the table
 
-# ---------------------------------------------------------------------------------------------
+# ------------
 
 # Optional:
 PostgresSQL Extension by Chris Kolkman  
