@@ -2,12 +2,12 @@ import http from 'http';
 import express, { Express } from 'express';
 import morgan from 'morgan';
 import routes from './routes/allRoutes.routes';
-import dotenv from 'dotenv';
-
 const router: Express = express();
+const httpServer = http.createServer(router);
+const PORT: any = process.env.PORT ?? 8080;
 
 /** Logging */
-router.use(morgan('dev'));
+router.use(morgan('dev'))
 router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 
@@ -43,6 +43,4 @@ router.use((req, res) => {
 });
 
 /** Server */
-const httpServer = http.createServer(router);
-const PORT: any = process.env.PORT ?? 3000;
 httpServer.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
